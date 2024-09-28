@@ -1,17 +1,17 @@
 [
-    // ...
     {
-        "key": "ctrl+tab",
-        "command": "workbench.action.nextEditorInGroup"
+        "key": "shift+; w",
+        "command": "workbench.action.files.save",
+        "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": "ctrl+shift+tab",
-        "command": "workbench.action.previousEditorInGroup"
+        "key": "ctrl+s",
+        "command": "-workbench.action.files.save"
     },
     {
-        "key": "ctrl+tab",
-        "command": "-dance.window.windowMenu",
-        "when": "editorTextFocus && dance.mode = 'normal'"
+        "key": "ctrl+shift+;",
+        "command": "workbench.action.showCommands",
+        "when": "editorTextFocus && dance.mode == 'visual'"
     },
     {
         "key": "shift+;",
@@ -19,12 +19,20 @@
         "when": "editorTextFocus && dance.mode == 'visual'"
     },
     {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "alt+f4",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
         "key": "shift+;",
         "command": "-workbench.action.showCommands",
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
-        "key": "shift+; w",
+        "key": "ctrl+s",
         "command": "workbench.action.files.save",
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
@@ -39,9 +47,27 @@
         "when": "editorTextFocus && dance.mode == 'normal'"
     },
     {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
         "key": "ctrl+shift+k",
         "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "-workbench.action.search.toggleQueryDetails",
+        "when": "inSearchEditor || searchViewletFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
     },
     {
         "key": "ctrl+shift+k",
@@ -49,14 +75,84 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+j",
-        "command": "-rust-analyzer.joinLines",
-        "when": "editorTextFocus && editorLangId == 'rust'"
+        "key": "ctrl+shift+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "-workbench.action.terminal.scrollUp",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
     },
     {
         "key": "ctrl+shift+j",
-        "command": "-workbench.action.search.toggleQueryDetails",
-        "when": "inSearchEditor || searchViewletFocus"
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "-workbench.action.terminal.scrollDown",
+        "when": "terminalFocus && terminalHasBeenCreated && !terminalAltBufferActive || terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+    },
+    {
+        "key": "shift+j",
+        "command": "-dance.edit.join",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+j",
+        "command": "-dance.edit.join",
+        "when": "editorTextFocus && dance.mode == 'visual'"
+    },
+    {
+        "key": "shift+j",
+        "command": "dance.select.down.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+k",
+        "command": "dance.select.up.extend",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+k",
+        "command": "-dance.selections.filter.regexp",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+k",
+        "command": "-dance.selections.filter.regexp",
+        "when": "editorTextFocus && dance.mode == 'visual'"
+    },
+    {
+        "key": "shift+l",
+        "command": "-dance.ignore",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+l",
+        "command": "-dance.ignore",
+        "when": "editorTextFocus && dance.mode == 'visual'"
+    },
+    {
+        "key": "shift+h",
+        "command": "-dance.ignore",
+        "when": "editorTextFocus && dance.mode == 'normal'"
+    },
+    {
+        "key": "shift+l",
+        "command": "dance.ignore",
+        "when": "editorTextFocus && dance.mode == 'visual'"
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.terminal.selectToNextCommand",
+        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
     },
     {
         "key": "ctrl+shift+j",
@@ -65,8 +161,8 @@
     },
     {
         "key": "alt+k",
-        "command": "-keybindings.editor.recordSearchKeys",
-        "when": "inKeybindings && inKeybindingsSearch"
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "alt+j",
@@ -74,14 +170,14 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "alt+k",
-        "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "key": "alt+enter",
+        "command": "editor.action.inlineSuggest.commit",
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
     },
     {
         "key": "tab",
         "command": "-editor.action.inlineSuggest.commit",
-        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+        "when": "inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorTabMovesFocus"
     },
     {
         "key": "tab",
@@ -89,89 +185,7 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
     },
     {
-        "key": "down",
-        "command": "-selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-        "key": "down",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-    },
-    {
-        "key": "shift+enter",
-        "command": "-editor.action.previousMatchFindAction",
-        "when": "editorFocus && findInputFocussed"
-    },
-    {
-        "key": "shift+enter",
-        "command": "-latex-new-line.new-line"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.navigateBack",
-        "when": "canNavigateBack"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openLocalFile",
-        "when": "remoteFileDialogVisible"
-    },
-
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFolderViaWorkspace",
-        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFile",
-        "when": "true"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFile",
-        "when": "true"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "extension.multiCommand.execute",
-        "args": {
-            "sequence": [
-                "dance.modes.set.normal",
-                "dance.edit.newLine.below.insert"
-            ]
-        },
-        "when": "editorTextFocus && dance.mode == 'insert'"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFolderViaWorkspace",
-        "when": "!openFolderWorkspaceSupport && workbenchState == 'workspace'"
-    },
-    {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openFileFolder",
-        "when": "isMacNative && openFolderWorkspaceSupport"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.navigateBack",
-        "when": "canNavigateBack"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-workbench.action.files.openLocalFile",
-        "when": "remoteFileDialogVisible"
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
     }
 ]

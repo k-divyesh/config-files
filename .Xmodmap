@@ -1,12 +1,28 @@
-! Swap Ctrl and Alt, and Caps Lock and Escape
-clear control
-clear mod1
+! Wipe existing modifier mappings so they can be rebuilt
+! clear control
+! clear mod1
 clear Lock
 
-! Physical key remaps
-keycode 37 = Alt_L       ! Left Ctrl -> Alt
-keycode 64 = Control_L   ! Left Alt -> Ctrl
-keycode 105 = Alt_R
-keycode 108 = Control_R
-keycode 66 = Escape      ! Caps Lock -> Escape
-keycode 9 = Caps_Lock    ! Escape -> Caps Lock
+! Swap Ctrl and Alt
+
+! Left Ctrl  -> Alt
+! keycode 37  = Alt_L
+! Left Alt   -> Ctrl
+! keycode 64  = Control_L
+! Right Ctrl -> Alt
+! keycode 105 = Alt_R
+! Right Alt  -> Ctrl
+! keycode 108 = Control_R
+
+! Swap Caps Lock and Escape
+! Caps Lock -> Escape
+keycode 66 = Escape
+! Escape    -> Caps Lock
+keycode 9  = Caps_Lock
+
+! Re-register the new keys as modifiers (required after the clears above)
+! add control = Control_L
+! add control = Control_R
+! add mod1 = Alt_L
+! add mod1 = Alt_R
+add lock = Caps_Lock

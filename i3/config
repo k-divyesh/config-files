@@ -395,3 +395,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 focus_wrapping no
 #mouse scroll speed
 exec --no-startup-id imwheel
+
+#xmodmap swap keys
+exec --no-startup-id .xmodmap ~/.Xmodmap
+

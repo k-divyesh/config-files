@@ -137,6 +137,9 @@ bindsym $mod+r mode "resize"
 # start a terminal
 bindsym $mod+Return exec --no-startup-id ghostty
 
+#start code editor:
+bindsym $mod+i exec --no-startup-id zeditor
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -321,11 +324,11 @@ for_window [instance="^ghostty$"] border pixel 5
 ######################################
 
 # These are the colors from the SECOND machine's bar
-set $darkbluetrans  #08052be6
+set $darkbluetrans  #08052b
 set $darkblue       #08052b
 set $lightblue      #5294e2
 set $urgentred      #e53935
-set $white          #7DFFB2
+set $white          #817C5C
 set $black          #000000
 set $purple         #e345ff
 set $darkgrey       #383c4a

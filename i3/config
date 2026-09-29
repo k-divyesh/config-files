@@ -393,3 +393,5 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 # disable cycling at end of workspace
 focus_wrapping no
+#mouse scroll speed
+exec --no-startup-id imwheel
